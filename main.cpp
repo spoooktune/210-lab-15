@@ -1,3 +1,5 @@
+// COMSC-210 | Lab 15 | Amrutha Sriprasana
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -38,11 +40,10 @@ int main(){
     in.open("input.txt");
     if (in.good()){
         string t, sw, ry;
-        while (getline(in, t)){
+        while (getline(in, t)){ // gets info for title
             Movie temp;
-            getline(in, t);
-            getline(in, ry);
-            getline(in, sw);
+            getline(in, ry); // gets info for release year
+            getline(in, sw); // gets info for screenwriter
             temp.setTitle(t);
             temp.setReleaseYear(ry);
             temp.setScreenwriter(sw);

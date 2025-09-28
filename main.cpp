@@ -12,15 +12,15 @@ class Movie{
     private:
         string title;
         string screenwriter;
-        int releaseYear;
+        string releaseYear;
 
     public:
         string getTitle() {return title;}
         string getScreenwriter() {return screenwriter;}
-        int getReleaseYear() {return releaseYear;}
+        string getReleaseYear() {return releaseYear;}
         void setTitle(string t) {title = t;}
         void setScreenwriter(string sw) {screenwriter = sw;}
-        void setReleaseYear(int ry) {releaseYear = ry;}
+        void setReleaseYear(string ry) {releaseYear = ry;}
         void print();
 };
 
@@ -37,15 +37,12 @@ int main(){
     ifstream in;
     in.open("input.txt");
     if (in.good()){
-        string t, sw;
-        int ry;
-        for (int i = 0; i < NUM_MOVIES; i++){
+        string t, sw, ry;
+        while (getline(in, t)){
             Movie temp;
             getline(in, t);
-            in.ignore();
-            in >> ry;
+            getline(in, ry);
             getline(in, sw);
-            in.ignore();
             temp.setTitle(t);
             temp.setReleaseYear(ry);
             temp.setScreenwriter(sw);
